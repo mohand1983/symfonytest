@@ -1,0 +1,24 @@
+version: "3"
+services:
+  db:
+    image: mysql:8
+    container_name: mysql8DB
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_HOST: "127.0.0.1"
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+    command: "--default-authentication-plugin=mysql_native_password"
+    volumes:
+      - ${ENVIRONMENT_ROOT}/data:/var/lib/mysql
+  php:
+    build: php8
+    container_name: php8
+    ports:
+      - "8082:80"
+    volumes:
+      - ${ENVIRONMENT_ROOT}/vhosts:/etc/apache2/sites-enabled
+      - ${ENVIRONMENT_ROOT}/api:/var/www

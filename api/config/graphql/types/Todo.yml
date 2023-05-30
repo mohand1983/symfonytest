@@ -1,0 +1,8 @@
+Todo:
+  type: object
+  config:
+    fileds:
+      id:
+        type: "Int!"
+      title:
+        type: "String!"

@@ -22,7 +22,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 RUN docker-php-ext-install pdo_mysql zip 
 
 # Upload composer and configure it as global command
-RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && mv composer.phar /usr/local/bin/composer
+#RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && mv composer.phar /usr/local/bin/composer
  
 # Create user as same gid/uid as the local one
 # So, files inherits permissions

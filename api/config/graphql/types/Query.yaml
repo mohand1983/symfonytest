@@ -1,0 +1,12 @@
+Query:
+  type: object
+  config:
+    fields:
+      Todo:
+        type: "Todo"
+        args:
+          id:
+            description: "Get one Todo by its id"
+            type: "Int!"
+      Todos:
+        type: "[Todo]"

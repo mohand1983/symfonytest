@@ -1,7 +1,7 @@
 Todo:
   type: object
   config:
-    fileds:
+    fields:
       id:
         type: "Int!"
       title:
